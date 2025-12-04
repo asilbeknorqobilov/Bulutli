@@ -18,7 +18,7 @@ class Program
         return result;
     }
 
-    
+
     static string Sakkizlik(int n)
     {
         if (n == 0) return "0";
@@ -29,12 +29,27 @@ class Program
             result = remainder + result;
             n /= 8;
         }
+
         return result;
     }
-    
+
+    static string S16lik(int n)
+    {
+        if (n == 0) return "0";
+        string hexDigits = "0123456789ABCDEF";
+        string result = "";
+        while (n > 0)
+        {
+            int remainder = n % 16;
+            result = hexDigits[remainder] + result;
+            n /= 16;
+        }
+
+        return result;
+    }
+
     static void Main(string[] args)
     {
-
         Console.WriteLine(Ikkilik(10));
     }
 }
